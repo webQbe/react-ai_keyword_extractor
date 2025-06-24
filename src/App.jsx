@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { Container, Box } from '@chakra-ui/react' // Chakra UI components
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <h1>Welcome</h1>
-    </>
+    <Box             // wrapper component like <div> but with props for styles
+      bg='blue.600' 
+      color='white' 
+      height='100vh' // Make Box fill the full vertical height of the viewport
+      paddingTop={130}
+    >
+      <Container   // center and constrain content horizontally
+        maxW='3xl' // set max width to Chakra's predefined 3xl value (about 48rem or 768px)
+        centerContent
+      > 
+        <h1>Welcome</h1>
+      </Container>
+    </Box>
   )
 }
 
