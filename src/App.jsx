@@ -1,4 +1,5 @@
 import { Container, Box } from '@chakra-ui/react' // Chakra UI components
+import Header from './components/Header'          // Rendered inside styled Container
 import './App.css'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         maxW='3xl' // set max width to Chakra's predefined 3xl value (about 48rem or 768px)
         centerContent
       > 
-        <h1>Welcome</h1>
+        <Header /> {/* Handles branding & intro text */}
       </Container>
     </Box>
   )
