@@ -1,13 +1,32 @@
 import { useState } from 'react'
-import { Textarea, Button } from '@chakra-ui/react'
+import { Textarea, Button, useToast } from '@chakra-ui/react' 
 
 const TextInput = () => {
 
     // Hold typed content into <Textarea>
     const [ text, setText ] = useState('') 
 
+    // Set up toast instance
+    const toast = useToast()
+
+    /* submitText function */
     const submitText = () => {
-        console.log(text) // logs current text to console
+
+        if (!text.trim()) { // If text field is empty (after trimming whitespace)
+
+            /* Show toast notification */
+            toast({
+                title: 'Text field is empty',
+                description: 'Please enter some text to extract keywords',
+                status: 'error',  // red style
+                duration: 5000,   // 5 seconds
+                isClosable: false // Not closable by user
+            })
+
+        } else { 
+                // If the input has text
+                console.log(text)
+        }
     }
 
   return (

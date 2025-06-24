@@ -1,10 +1,8 @@
 # React-AI Keyword Extractor
 - Building & deploying AI powered keyword extractor
-- User can extract keyword from articles 
+- User can extract keywords from articles 
 - When a user enter text and click **Extract Keywords** button, it will open a modal with the extracted keywords.
 - Using **OpenAI Completions API** and **Chakra UI** library
-
-## Getting Started
 
 ### 1. Create React App 
 1. Download and Install **Node.js** on project root directory
@@ -21,7 +19,7 @@
     1. Open terminal and run `npm install`
     2. Install packages:
         ```
-        npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion 
+        npm i @chakra-ui/react@2 @emotion/react @emotion/styled framer-motion
         ```
 6. Delete: `public/vite.svg`, `src/index.css`, and files in `src/assets` 
     1. Remove `import './index.css'` from `src/main.jsx`
