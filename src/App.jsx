@@ -1,5 +1,6 @@
 import { Container, Box } from '@chakra-ui/react' // Chakra UI components
 import Header from './components/Header'          // Rendered inside styled Container
+import Footer from './components/Footer'          
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         centerContent
       > 
         <Header /> {/* Handles branding & intro text */}
+        <Footer /> {/* Footer with OpenAI logo + “Powered By Open AI” text */}
       </Container>
     </Box>
   )
