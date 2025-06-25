@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Container, Box } from '@chakra-ui/react' // Chakra UI components
 import Header from './components/Header'          // Rendered inside styled Container
 import Footer from './components/Footer'   
-import TextInput from './components/TextInput'       
+import TextInput from './components/TextInput' 
+import KeywordsModal from './components/KeywordsModal'      
 import './App.css'
 
 function App() {
@@ -31,7 +32,11 @@ function App() {
         // provide structured input for the assistant
         messages: [
                       { role: "system", content: "You are a keyword extraction assistant." },
-                      { role: "user", content: text }
+                      { 
+                        role: "user", 
+                        /* Tweak prompt to get a plain comma-separated list */
+                        content: "Extract keywords from this text and return only the keywords as a comma-separated list, with each keyword’s first letter uppercase. Do not include any numbering or extra text:\n\n" + text 
+                      }
                   ],
         temperature: 0.5, // controls randomness; 0.5 is moderately creative
         max_tokens: 60    // limits reply length
@@ -62,6 +67,10 @@ function App() {
     
   }
 
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+
   return (
     <Box             // wrapper component like <div> but with props for styles
       bg='blue.600' 
@@ -81,6 +90,12 @@ function App() {
 
         <Footer />    {/* Footer with OpenAI logo + “Powered By Open AI” text */}
       </Container>
+      <KeywordsModal 
+        keywords={keywords}     // keyword string returned by OpenAI API
+        loading={loading}       // whether API is still processing
+        isOpen={isOpen}         // boolean to control <Modal>
+        closeModal={closeModal} // function to close the modal
+      />
     </Box>
   )
 }
