@@ -31,3 +31,21 @@
     3. Clear contents in `src/App.css`
 
 7. Start frontend and backend servers: `npm run dev`
+
+### 2. Set up OpenAI API
+1. Login to `https://platform.openai.com/` 
+
+2. Open API Keys page: `https://platform.openai.com/settings/organization/api-keys`
+    1. Click **Create new secret key**
+    2. Generate & Copy your key
+
+3. Create `.env` file:
+    ```
+    VITE_OPENAI_API_KEY=your_openapi_key
+    VITE_OPENAI_API_URL=https://api.openai.com/v1/chat/completions
+    ```
+    - Add `.env` file to `.gitignore` file
+
+4. Go to `https://platform.openai.com/account/billing`
+    1. Open **Payment methods** tab
+    2. Click **Add payment method** to add your credit/debit card

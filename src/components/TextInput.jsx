@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Textarea, Button, useToast } from '@chakra-ui/react' 
 
-const TextInput = () => {
+const TextInput = ({ extractKeywords }) => { // Receive extractKeywords() as a prop
 
     // Hold typed content into <Textarea>
     const [ text, setText ] = useState('') 
@@ -25,7 +25,7 @@ const TextInput = () => {
 
         } else { 
                 // If the input has text
-                console.log(text)
+                extractKeywords(text)
         }
     }
 
