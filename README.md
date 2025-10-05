@@ -1,8 +1,16 @@
 # React-AI Keyword Extractor
+This repo is an adaptation of [Build a Keyword Extractor: React + OpenAI API + Chakra UI](https://www.youtube.com/watch?v=jJNPPP2YEdM) by Brad Traversy. I followed the tutorial to learn followings.
 - Building & deploying AI powered keyword extractor
 - User can extract keywords from articles 
 - When a user enter text and click **Extract Keywords** button, it will open a modal with the extracted keywords.
 - Using **OpenAI Completions API** and **Chakra UI** library
+
+
+## What I changed
+- Changed copy button text to "Copied" when clicked
+- Switched to current Chat Completion model (`gpt-3.5-turbo`) 
+
+## Getting Started
 
 ### 1. Create React App 
 1. Download and Install **Node.js** on project root directory
@@ -49,3 +57,10 @@
 4. Go to `https://platform.openai.com/account/billing`
     1. Open **Payment methods** tab
     2. Click **Add payment method** to add your credit/debit card
+
+## Credits
+Original tutorial: [Build a Keyword Extractor: React + OpenAI API + Chakra UI](https://www.youtube.com/watch?v=jJNPPP2YEdM) — Brad Traversy.
+This repo includes my changes (noted above).
+
+## License
+MIT License
